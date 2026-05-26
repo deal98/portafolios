@@ -1,0 +1,46 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "ERP Corporativo con .NET 8",
+      "icon": "🏢",
+      "technologies": ["C#", ".NET Core", "Blazor WASM", "SQL Server", "Docker"],
+      "description": "Sistema completo para gestión de inventario, ventas y reportes. API RESTful con JWT, despliegue con Docker Compose. Documentada en Postman."
+    },
+    {
+      "id": 2,
+      "title": "E-commerce con Laravel 10 + Livewire",
+      "icon": "🛒",
+      "technologies": ["PHP", "Laravel 10", "Livewire", "PostgreSQL", "Bootstrap"],
+      "description": "Tienda online con carrito en tiempo real, panel admin y pasarela de pagos. Componentes Livewire sin JS adicional."
+    },
+    {
+      "id": 3,
+      "title": "App Móvil con Flutter y REST API",
+      "icon": "📱",
+      "technologies": ["Dart", "Flutter", "Node.js", "MongoDB", "Postman"],
+      "description": "App de delivery con seguimiento GPS, notificaciones push y backend en Node. Testing con Postman."
+    },
+    {
+      "id": 4,
+      "title": "Dashboard con React + .NET Core",
+      "icon": "📊",
+      "technologies": ["React", "Chart.js", "C#", ".NET Core Web API", "SQL Server"],
+      "description": "Panel analítico con gráficos interactivos, consumo de API en tiempo real y autenticación."
+    },
+    {
+      "id": 5,
+      "title": "Sistema Legacy migrado (CI3 a Laravel)",
+      "icon": "🔄",
+      "technologies": ["CodeIgniter 3", "Laravel 10", "MySQL", "jQuery", "Bootstrap 5"],
+      "description": "Migración completa de sistema de facturación manteniendo datos, mejorando rendimiento y seguridad."
+    },
+    {
+      "id": 6,
+      "title": "WebAssembly con Blazor + API",
+      "icon": "⚡",
+      "technologies": ["C#", "Blazor WebAssembly", ".NET Core", "REST API", "JSON"],
+      "description": "SPA corriendo directamente en el navegador con C# y .NET. Consumo de APIs externas y manejo de JSON."
+    }
+  ]
+}

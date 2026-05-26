@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>🐳 Docker Demo - Contenedor interactivo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .docker-terminal {
+            background: #0f172a;
+            color: #00ff9d;
+            padding: 20px;
+            border-radius: 12px;
+            font-family: 'Courier New', monospace;
+        }
+        .docker-logo { animation: spin 10s linear infinite; display: inline-block; }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card shadow-lg">
+            <div class="card-header bg-dark text-white">
+                <h2><i class="fab fa-docker docker-logo"></i> Docker Compose Demo</h2>
+                <code>docker run -p 8080:80 mi-portfolio</code>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>📊 Contador en contenedor</h4>
+                        <div class="docker-terminal">
+                            <p>🐳 Container ID: <span id="containerId">a7f3b9c2e1d4</span></p>
+                            <p>🔄 Requests: <span id="requestCount">0</span></p>
+                            <button class="btn btn-success mt-2" onclick="incrementCounter()">
+                                ▶️ Ejecutar comando
+                            </button>
+                            <button class="btn btn-warning mt-2" onclick="restartContainer()">
+                                🔄 Restart container
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>🐳 Logs del contenedor</h4>
+                        <div id="dockerLogs" class="docker-terminal" style="height: 200px; overflow-y: auto;">
+                            > Container started<br>
+                            > Listening on port 80<br>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <h5>📦 Dockerfile ejemplo:</h5>
+                <pre class="bg-light p-3 rounded">
+FROM nginx:alpine
+COPY ./portfolio /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]</pre>
+
+                <button class="btn btn-primary mt-2" onclick="buildDockerImage()">
+                    🏗️ Simular docker build -t mi-portfolio .
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let requestCount = 0;
+
+        function incrementCounter() {
+            requestCount++;
+            document.getElementById('requestCount').innerText = requestCount;
+            addLog(`> Comando ejecutado: curl localhost (Request #${requestCount})`);
+        }
+
+        function restartContainer() {
+            requestCount = 0;
+            document.getElementById('requestCount').innerText = requestCount;
+            addLog("🔄 Reiniciando contenedor...");
+            setTimeout(() => addLog("✅ Contenedor reiniciado correctamente"), 1000);
+        }
+
+        function addLog(message) {
+            const logs = document.getElementById('dockerLogs');
+            logs.innerHTML += `<br>${new Date().toLocaleTimeString()} - ${message}`;
+            logs.scrollTop = logs.scrollHeight;
+        }
+
+        function buildDockerImage() {
+            addLog("🏗️ docker build -t mi-portfolio .");
+            setTimeout(() => addLog("✅ Imagen construida: mi-portfolio:latest"), 1500);
+            setTimeout(() => addLog("🚀 docker run -d -p 8080:80 mi-portfolio"), 2500);
+            setTimeout(() => addLog("🌐 Aplicación disponible en http://localhost:8080"), 3500);
+        }
+
+        // Cambiar ID cada 3 segundos simulando contenedor
+        setInterval(() => {
+            const newId = Math.random().toString(36).substring(2, 15);
+            document.getElementById('containerId').innerText = newId;
+        }, 3000);
+    </script>
+    <script src="https://kit.fontawesome.com/a1c7f4eef9.js"></script>
+</body>
+</html>

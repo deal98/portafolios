@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>⚛️ React CRUD Demo - Tareas</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div id="root"></div>
+    </div>
+
+    <script type="text/babel">
+        function TodoApp() {
+            const [tasks, setTasks] = React.useState([
+                { id: 1, text: "Aprender React", completed: false },
+                { id: 2, text: "Hacer CRUD", completed: false }
+            ]);
+            const [inputValue, setInputValue] = React.useState("");
+
+            const addTask = () => {
+                if (inputValue.trim()) {
+                    setTasks([...tasks, { id: Date.now(), text: inputValue, completed: false }]);
+                    setInputValue("");
+                }
+            };
+
+            const toggleTask = (id) => {
+                setTasks(tasks.map(task => 
+                    task.id === id ? { ...task, completed: !task.completed } : task
+                ));
+            };
+
+            const deleteTask = (id) => {
+                setTasks(tasks.filter(task => task.id !== id));
+            };
+
+            return (
+                <div className="card shadow-lg p-4">
+                    <h2>✅ React CRUD Demo</h2>
+                    <p>Consumiendo API simulada (estado local)</p>
+                    
+                    <div className="input-group mb-3">
+                        <input 
+                            type="text" 
+                            className="form-control" 
+                            value={inputValue}
+                            onChange={(e) => setInputValue(e.target.value)}
+                            placeholder="Nueva tarea..."
+                            onKeyPress={(e) => e.key === 'Enter' && addTask()}
+                        />
+                        <button className="btn btn-primary" onClick={addTask}>Agregar</button>
+                    </div>
+
+                    <ul className="list-group">
+                        {tasks.map(task => (
+                            <li key={task.id} className="list-group-item d-flex justify-content-between align-items-center">
+                                <div>
+                                    <input 
+                                        type="checkbox" 
+                                        className="form-check-input me-2"
+                                        checked={task.completed}
+                                        onChange={() => toggleTask(task.id)}
+                                    />
+                                    <span style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
+                                        {task.text}
+                                    </span>
+                                </div>
+                                <button className="btn btn-danger btn-sm" onClick={() => deleteTask(task.id)}>
+                                    🗑️
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
+
+                    <div className="mt-3 alert alert-info">
+                        <small>⚛️ React 18 + Hooks | Simula frontend moderno con estado local</small>
+                    </div>
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById("root")).render(<TodoApp />);
+    </script>
+</body>
+</html>

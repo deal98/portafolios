@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Mi Portfolio Fullstack | .NET • PHP • React • Flutter</title>
+    
+    <!-- Fonts & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="#"> 
+            <span class="brand-icon">&lt;/&gt;</span> 
+            MiPortfolio<span class="text-accent">.dev</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Tech Stack</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Proyectos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- ========== HERO SECTION ========== -->
+<section id="home" class="hero-section">
+    <div class="container">
+        <div class="row min-vh-100 align-items-center">
+            <div class="col-lg-7" data-aos="fade-right">
+                <div class="hero-badge">
+                    <i class="fas fa-code"></i> Fullstack Developer
+                </div>
+                <h1 class="hero-title">
+                    Hola, soy <span class="highlight">Diego Arturo Lopez Vasquez</span><br>
+                    Construyo soluciones <span class="typing"></span>
+                </h1>
+                <p class="hero-text">
+                    Con <strong>7+ años</strong> de experiencia en desarrollo web, móvil y empresarial. 
+                    Especializado en <strong>.NET, PHP/Laravel, React, Flutter</strong> y arquitecturas escalables con Docker.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary btn-glow">
+                        <i class="fas fa-rocket"></i> Ver proyectos
+                    </a>
+                    <a href="#contact" class="btn btn-outline-light">
+                        <i class="fas fa-paper-plane"></i> Contáctame
+                    </a>
+                </div>
+                <div class="tech-icons-cloud">
+                    <i class="fab fa-laravel"></i>
+                    <i class="fab fa-react"></i>
+                    <i class="fab fa-vuejs"></i>
+                    <i class="fab fa-angular"></i>
+                    <i class="fab fa-node-js"></i>
+                    <i class="fab fa-docker"></i>
+                    <i class="fas fa-database"></i>
+                    <i class="fab fa-bootstrap"></i>
+                </div>
+            </div>
+            <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left">
+                <div class="code-card">
+                    <div class="code-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="code-title">developer.cs</span>
+                    </div>
+                    <div class="code-body">
+                        <pre><code><span class="keyword">public class</span> <span class="class">FullstackDev</span>
+{
+    <span class="keyword">private string</span>[] <span class="var">backend</span> = {<span class="string">"PHP"</span>, <span class="string">"Laravel"</span>, <span class="string">"C#"</span>, <span class="string">".NET"</span>};
+    <span class="keyword">private string</span>[] <span class="var">frontend</span> = {<span class="string">"Vue"</span>, <span class="string">"React"</span>, <span class="string">"AngularJS"</span>};
+    <span class="keyword">private string</span>[] <span class="var">devops</span> = {<span class="string">"Docker"</span>, <span class="string">"Postman"</span>, <span class="string">"Git"</span>};
+
+    <span class="function">public void</span> <span class="method">Build()</span> {
+        Console.<span class="method">WriteLine</span>(<span class="string">"🚀 Deploy excellence"</span>);
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#ffffff" fill-opacity="1" d="M0,192L48,197.3C96,203,192,213,288,208C384,203,480,181,576,181.3C672,181,768,203,864,213.3C960,224,1056,224,1152,208C1248,192,1344,160,1392,144L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </div>
+</section>
+
+<!-- ========== SKILLS SECTION ========== -->
+<section id="skills" class="skills-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Tech Stack</span>
+            <h2>Herramientas que domino</h2>
+            <p>Más de 15 tecnologías en producción real</p>
+        </div>
+
+        <div class="skills-grid">
+            <!-- Backend -->
+            <div class="skill-category" data-aos="fade-right">
+                <h3><i class="fas fa-server"></i> Backend</h3>
+                <div class="skills-list">
+                    <span class="skill-item">PHP Puro</span>
+                    <span class="skill-item">CodeIgniter 3</span>
+                    <span class="skill-item">Laravel 10</span>
+                    <span class="skill-item">Livewire</span>
+                    <span class="skill-item">C# .NET</span>
+                    <span class="skill-item">.NET Core</span>
+                    <span class="skill-item">Web API</span>
+                    <span class="skill-item">Node.js</span>
+                </div>
+            </div>
+
+            <!-- Frontend -->
+            <div class="skill-category" data-aos="fade-up">
+                <h3><i class="fas fa-laptop-code"></i> Frontend</h3>
+                <div class="skills-list">
+                    <span class="skill-item">Vue.js</span>
+                    <span class="skill-item">AngularJS</span>
+                    <span class="skill-item">React</span>
+                    <span class="skill-item">Blazor (WASM)</span>
+                    <span class="skill-item">Bootstrap</span>
+                    <span class="skill-item">JavaScript</span>
+                    <span class="skill-item">jQuery</span>
+                    <span class="skill-item">HTML5/CSS3</span>
+                </div>
+            </div>
+
+            <!-- Mobile & DB -->
+            <div class="skill-category" data-aos="fade-left">
+                <h3><i class="fas fa-mobile-alt"></i> Móvil & DB</h3>
+                <div class="skills-list">
+                    <span class="skill-item">Dart/Flutter</span>
+                    <span class="skill-item">PostgreSQL</span>
+                    <span class="skill-item">MySQL</span>
+                    <span class="skill-item">SQL Server</span>
+                    <span class="skill-item">Firebase</span>
+                </div>
+            </div>
+
+            <!-- DevOps & Tools -->
+            <div class="skill-category" data-aos="fade-right">
+                <h3><i class="fas fa-cogs"></i> DevOps & Tools</h3>
+                <div class="skills-list">
+                    <span class="skill-item">Docker</span>
+                    <span class="skill-item">Postman</span>
+                    <span class="skill-item">Git/GitHub</span>
+                    <span class="skill-item">JSON/REST</span>
+                    <span class="skill-item">WebAssembly</span>
+                    <span class="skill-item">CI/CD</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Livewire Preview -->
+        <div class="livewire-preview" data-aos="zoom-in">
+            <div class="livewire-header">
+                <i class="fas fa-bolt"></i> Laravel Livewire
+                <span class="badge">Interactivo sin JS</span>
+            </div>
+            <div class="livewire-demo">
+                <button class="livewire-btn" id="counterBtn">
+                    <i class="fas fa-mouse-pointer"></i> Contador Livewire: <span id="counter">0</span>
+                </button>
+                <p class="demo-text">✅ Demostración de reactividad sin escribir JavaScript (simulado)</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== PROJECTS SECTION ========== -->
+<section id="projects" class="projects-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Proyectos Reales</span>
+            <h2>Lo que he construido</h2>
+            <p>Casos de éxito con diferentes stacks tecnológicos</p>
+        </div>
+
+        <div class="projects-grid" id="projectsContainer">
+            <!-- Los proyectos se cargarán desde JSON con JS -->
+        </div>
+    </div>
+</section>
+
+<!-- ========== CONTACT SECTION ========== -->
+<section id="contact" class="contact-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6" data-aos="fade-right">
+                <div class="contact-info">
+                    <span class="section-tag">Contacto</span>
+                    <h2>¿Trabajamos juntos?</h2>
+                    <p>Estoy disponible para proyectos freelance, consultoría o tiempo completo remoto.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>tuemail@ejemplo.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <span>github.com/tuusuario</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <span>linkedin.com/in/tuusuario</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Latinoamérica / Remoto</span>
+                        </div>
+                    </div>
+                    <div class="postman-badge">
+                        <i class="fas fa-file-alt"></i> API Collection en Postman 
+                        <a href="#" class="btn-sm-link">📥 Descargar ejemplo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="contact-card">
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Correo electrónico" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="4" placeholder="Cuéntame sobre tu proyecto..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">
+                            <i class="fas fa-paper-plane"></i> Enviar mensaje
+                        </button>
+                        <p class="form-note"><i class="fas fa-info-circle"></i> Demo frontend - sin envío real</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+    <div class="container">
+        <div class="docker-animation">
+            <i class="fab fa-docker"></i> Deployed with Docker • Postman Ready • JSON API
+        </div>
+        <p>&copy; 2025 - Portfolio Fullstack | Todas las tecnologías demostradas en este sitio</p>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="js/main.js"></script>
+<!-- Botón flotante de demos -->
+<div class="demo-fab" onclick="window.location.href='index-demos.html'">
+    <i class="fas fa-cubes"></i>
+    <span class="demo-tooltip">Ver Demos Interactivas</span>
+</div>
+
+</body>
+</html>

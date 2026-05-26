@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 Demos Interactivas | Mi Portfolio Fullstack</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            padding: 15px 0;
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: #1e293b;
+        }
+
+        .brand-icon {
+            background: linear-gradient(135deg, #6366f1, #ec4899);
+            padding: 5px 10px;
+            border-radius: 8px;
+            color: white;
+            margin-right: 8px;
+        }
+
+        /* Header */
+        .demos-header {
+            text-align: center;
+            padding: 100px 20px 60px;
+            color: white;
+        }
+
+        .demos-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .demos-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Grid de demos */
+        .demos-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+
+        .demo-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            cursor: pointer;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .demo-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+        }
+
+        .demo-card-header {
+            padding: 40px 30px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .demo-icon {
+            font-size: 4rem;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .demo-card:nth-child(1) .demo-card-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .demo-card:nth-child(2) .demo-card-header { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .demo-card:nth-child(3) .demo-card-header { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .demo-card:nth-child(4) .demo-card-header { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+        .demo-card:nth-child(5) .demo-card-header { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+
+        .demo-card-body {
+            padding: 25px;
+            flex: 1;
+        }
+
+        .demo-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1e293b;
+        }
+
+        .demo-description {
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        .tech-tag {
+            background: #f1f5f9;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        .demo-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #6366f1, #ec4899);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .demo-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(99,102,241,0.4);
+            color: white;
+        }
+
+        /* Stats section */
+        .stats-section {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 50px 20px;
+            margin: 40px 20px;
+            border-radius: 30px;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Botón volver */
+        .back-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .back-btn:hover {
+            background: black;
+            transform: translateX(-5px);
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: rgba(255,255,255,0.7);
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .demos-header h1 { font-size: 2rem; }
+            .demo-card { margin-bottom: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <span class="brand-icon">&lt;/&gt;</span> 
+            MiPortfolio<span style="color: #6366f1;">.dev</span>
+        </a>
+        <div class="ms-auto">
+            <a href="index.html" class="btn btn-outline-primary btn-sm">
+                <i class="fas fa-arrow-left"></i> Volver al portafolio
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- Header -->
+<div class="demos-header">
+    <div class="container">
+        <div class="hero-badge" style="display: inline-block; background: rgba(255,255,255,0.2); padding: 8px 20px; border-radius: 50px; margin-bottom: 20px;">
+            <i class="fas fa-cubes"></i> Proyectos Interactivos
+        </div>
+        <h1>🎮 Demos <span style="background: linear-gradient(135deg, #ffd89b, #c7e9fb); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Funcionales</span></h1>
+        <p>Proyectos reales que puedes probar ahora mismo en tu navegador</p>
+    </div>
+</div>
+
+<!-- Grid de demos -->
+<div class="demos-container">
+    <div class="row g-4">
+        <!-- Demo 1: .NET API -->
+        <div class="col-lg-4 col-md-6">
+            <div class="demo-card" onclick="window.open('demo1-api.html', '_blank')">
+                <div class="demo-card-header">
+                    <div class="demo-icon">🌐</div>
+                </div>
+                <div class="demo-card-body">
+                    <h3>.NET Core Web API</h3>
+                    <p class="demo-description">API RESTful simulada con endpoints reales, respuestas JSON y colección descargable para Postman.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">C#</span>
+                        <span class="tech-tag">.NET Core</span>
+                        <span class="tech-tag">Postman</span>
+                        <span class="tech-tag">JSON</span>
+                    </div>
+                    <button class="demo-btn">
+                        <i class="fas fa-play"></i> Probar demo
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Demo 2: Docker -->
+        <div class="col-lg-4 col-md-6">
+            <div class="demo-card" onclick="window.open('demo2-docker.html', '_blank')">
+                <div class="demo-card-header">
+                    <div class="demo-icon">🐳</div>
+                </div>
+                <div class="demo-card-body">
+                    <h3>Docker + DevOps</h3>
+                    <p class="demo-description">Simulación de contenedores, logs en tiempo real, Dockerfile interactivo y comandos docker.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Container</span>
+                        <span class="tech-tag">CLI</span>
+                    </div>
+                    <button class="demo-btn">
+                        <i class="fas fa-play"></i> Probar demo
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Demo 3: React -->
+        <div class="col-lg-4 col-md-6">
+            <div class="demo-card" onclick="window.open('demo3-react-crud.html', '_blank')">
+                <div class="demo-card-header">
+                    <div class="demo-icon">⚛️</div>
+                </div>
+                <div class="demo-card-body">
+                    <h3>React CRUD</h3>
+                    <p class="demo-description">Aplicación de tareas con Create, Read, Update, Delete usando React Hooks y estado local.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">React 18</span>
+                        <span class="tech-tag">Hooks</span>
+                        <span class="tech-tag">JSX</span>
+                    </div>
+                    <button class="demo-btn">
+                        <i class="fas fa-play"></i> Probar demo
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Demo 4: Blazor -->
+        <div class="col-lg-4 col-md-6">
+            <div class="demo-card" onclick="window.open('demo4-blazor.html', '_blank')">
+                <div class="demo-card-header">
+                    <div class="demo-icon">⚡</div>
+                </div>
+                <div class="demo-card-body">
+                    <h3>Blazor WebAssembly</h3>
+                    <p class="demo-description">Ejecutando C# en el navegador con WebAssembly, componentes interactivos y cálculos.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Blazor</span>
+                        <span class="tech-tag">WASM</span>
+                        <span class="tech-tag">C#</span>
+                    </div>
+                    <button class="demo-btn">
+                        <i class="fas fa-play"></i> Probar demo
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Demo 5: Livewire -->
+        <div class="col-lg-4 col-md-6">
+            <div class="demo-card" onclick="window.open('demo5-livewire.html', '_blank')">
+                <div class="demo-card-header">
+                    <div class="demo-icon">🔴</div>
+                </div>
+                <div class="demo-card-body">
+                    <h3>Laravel Livewire</h3>
+                    <p class="demo-description">Componentes reactivos sin JavaScript, actualizaciones en tiempo real estilo Livewire.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Laravel</span>
+                        <span class="tech-tag">Livewire</span>
+                        <span class="tech-tag">PHP</span>
+                    </div>
+                    <button class="demo-btn">
+                        <i class="fas fa-play"></i> Probar demo
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Demo 6: Vue.js (extra) -->
+        <div class="col-lg-4 col-md-6">
+            <div class="demo-card" onclick="window.open('demo6-vue.html', '_blank')">
+                <div class="demo-card-header">
+                    <div class="demo-icon">💚</div>
+                </div>
+                <div class="demo-card-body">
+                    <h3>Vue.js 3</h3>
+                    <p class="demo-description">Demo de Vue 3 con Composition API, reactividad y componentes reutilizables.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Vue.js</span>
+                        <span class="tech-tag">Composition API</span>
+                    </div>
+                    <button class="demo-btn">
+                        <i class="fas fa-play"></i> Probar demo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Stats Section -->
+<div class="stats-section">
+    <div class="stats-grid">
+        <div class="stat-item">
+            <span class="stat-number">7+</span>
+            <span class="stat-label">Demos Interactivas</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">15+</span>
+            <span class="stat-label">Tecnologías</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Funcional sin backend</span>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p><i class="fas fa-code"></i> Cada demo es completamente funcional y muestra habilidades reales</p>
+        <p><small>© 2025 - Portfolio Fullstack | Demos interactivas</small></p>
+    </div>
+</footer>
+
+<!-- Botón volver flotante -->
+<a href="index.html" class="back-btn">
+    <i class="fas fa-home"></i>
+    <span>Volver al inicio</span>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
